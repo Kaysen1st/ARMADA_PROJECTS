@@ -1,0 +1,103 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>My Portfolio</title>
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+
+  <body>
+    <header>
+      <h1>Welcome to My Portfolio</h1>
+      <nav>
+        <ul>
+          <li><a href="#home">Home</a></li>
+          <li><a href="#about">About Me</a></li>
+          <li><a href="#projects">Projects</a></li>
+        </ul>
+      </nav>
+    </header>
+
+    <section id="about">
+      <h2>About Me</h2>
+      <p>
+        Hello! I'm passionate about web development and enjoy creating projects
+        that solve real-world problems. This portfolio showcases some of my work
+        and interests.
+      </p>
+    </section>
+
+    <section id="projects">
+      <h2>My Projects</h2>
+      <table>
+        <tr>
+          <th>Project Name</th>
+          <th>Description</th>
+          <th>Year</th>
+        </tr>
+        <tr>
+          <td>Project One</td>
+          <td>A website that helps users track their daily habits.</td>
+          <td>2024</td>
+        </tr>
+        <tr>
+          <td>Project Two</td>
+          <td>A simple to-do list application with local storage.</td>
+          <td>2024</td>
+        </tr>
+        <tr>
+          <td>Project Three</td>
+          <td>A photography portfolio showcasing my best work.</td>
+          <td>2023</td>
+        </tr>
+      </table>
+    </section>
+
+    <section id="contact">
+      <h2>Contact Me</h2>
+      <form>
+        <label for="name">Full Name:</label>
+        <input type="text" id="name" name="name" /><br /><br />
+
+        <label for="email">Email Address:</label>
+        <input type="email" id="email" name="email" /><br /><br />
+        <fieldset>
+          <legend>How did you hear about this portfolio?</legend>
+          <input type="radio" id="friend" name="source" value="Friend" />
+          <label for="friend">Friend</label><br />
+          <input type="radio" id="social" name="source" value="Social Media" />
+          <label for="social">Social Media</label><br />
+          <input type="radio" id="search" name="source" value="Search Engine" />
+          <label for="search">Search Engine</label><br />
+          <input type="radio" id="other" name="source" value="Other" />
+          <label for="other">Other</label><br /><br />
+        </fieldset>
+        <fieldset>
+          <legend>Skills/Interests</legend>
+          <input
+            type="checkbox"
+            id="webdev"
+            name="skills"
+            value="Web Development"
+          />
+          <label for="webdev">Web Development</label><br />
+          <input type="checkbox" id="design" name="skills" value="Design" />
+          <label for="design">Design</label><br />
+          <input type="checkbox" id="photo" name="skills" value="Photography" />
+          <label for="photo">Photography</label><br /><br />
+        </fieldset>
+
+        <label for="comments">Comments or Messages:</label><br />
+        <textarea id="comments" name="comments" rows="4" cols="50"></textarea
+        ><br /><br />
+
+        <input type="submit" value="Submit" />
+      </form>
+    </section>
+
+    <footer>
+      <p>&copy; Samuel 2025</p>
+    </footer>
+  </body>
+</html>
