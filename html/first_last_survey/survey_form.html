@@ -1,0 +1,88 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=, initial-scale=1.0" />
+    <title>Survey Form</title>
+  </head>
+
+  <body>
+    <form>
+      <h1>Survey Form</h1>
+      <label for="name">Full Name:</label>
+      <input type="text" id="name" name="name" />
+      <br />
+      <label for="email">Email:</label>
+      <input type="email" id="email" name="email" />
+      <br />
+      <br />
+      <h4 style="margin: auto">How satisfied are you with our service?</h4>
+      <div style="border-style: solid; margin-right: 25%">
+        <input
+          type="radio"
+          id="very-satisfied"
+          name="satisfaction"
+          value="very-satisfied"
+        />
+        <label for="very-satisfied">Very Satisfied</label>
+        <br />
+        <input
+          type="radio"
+          id="satisfied"
+          name="satisfaction"
+          value="satisfied"
+        />
+        <label for="satisfied">Satisfied</label>
+        <br />
+        <input type="radio" id="neutral" name="satisfaction" value="neutral" />
+        <label for="neutral">Neutral</label>
+        <br />
+        <input
+          type="radio"
+          id="Dissatisfied"
+          name="satisfaction"
+          value="unsatisfied"
+        />
+        <label for="unsatisfied">Disatisfied</label>
+        <br />
+        <input
+          type="radio"
+          id="Very-Disatisfied"
+          name="satisfaction"
+          value="very-unsatisfied"
+        />
+        <label for="very-unsatisfied">Very Disatisfied</label>
+        <br />
+      </div>
+      <br />
+      <h4 style="margin: auto">What features do you value most?</h4>
+      <div style="border-style: solid; margin-right: 25%">
+        <label for="ease-of-use">Eas of Use</label>
+        <input type="checkbox" id="ease-of-use" name="features" />
+        <br />
+        <label for="Design">Design</label>
+        <input type="checkbox" id="Design" name="features" />
+        <br />
+        <label for="Customer-Support">Customer Support</label>
+        <input type="checkbox" id="Customer-Support" name="features" />
+        <br />
+      </div>
+      <br />
+      <h4>
+        What best describe you?
+        <select name="role" id="role">
+          <option value="student">Student</option>
+          <option value="professional">Professional</option>
+          <option value="other">Other</option>
+        </select>
+      </h4>
+      <br />
+      <br />
+      <h4>additional Feedback:</h4>
+      <textarea name="feedback" id="feedback" cols="30" rows="10"></textarea>
+      <br />
+      <form method="post" action="/submit_form">
+        <input type="submit" value="Submit" />
+    </form>
+  </body>
+</html>
