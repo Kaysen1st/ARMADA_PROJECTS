@@ -1,0 +1,13 @@
+Time Taken:
+This assignment took me approximately 1-2 hours to complete, including debugging layout issues and refining the design.
+
+Approach to the challenge:
+One of the challenges I encountered was properly aligning and spacing the elements using Flexbox. 
+Initially, I had some issues with justify-content and align-items inside the 
+.left-panel, as the spacing wasn’t distributing the boxes as expected. 
+Additionally, ensuring the right layout structure while keeping it responsive required some tweaking.
+
+How I Solved Them:
+To fix the alignment issue, I applied flex-direction: column to the .left-panel and made sure there was enough gap between the elements. 
+I also adjusted the padding and background color of the .left-panel to match the expected design. 
+Additionally, I used border-radius for a better visual appearance and ensured consistency across sections.

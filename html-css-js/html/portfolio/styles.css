@@ -1,100 +1,122 @@
-/* General Styles */
+html, body {
+  height: 100%;
+}
 body {
-    font-family: Arial, sans-serif;
-    margin: 0;
-    padding: 0;
-    color: #333;
-    background: rgb(238,174,202);
-    background: radial-gradient(circle, rgba(238,174,202,1) 0%, rgba(148,187,233,1) 100%);
-}
+  display: flex;
+  flex-direction: column;
+  font-family: Arial, sans-serif;
 
-/* Header Styles */
+  color: #333;
+  background: rgb(238, 174, 202);
+  background: radial-gradient(circle,rgba(238, 174, 202, 1) 0%,rgba(148, 187, 233, 1) 100%);
+}
 header {
-    background: rgb(20, 24, 46);
-    background: radial-gradient(circle, rgb(9, 15, 41) 0%, rgb(34, 16, 114) 100%);
-    color: white;
-    padding: 20px;
-    text-align: center;
+  background: rgb(20, 24, 46);
+  background: radial-gradient(circle, rgb(9, 15, 41) 0%, rgb(34, 16, 114) 100%);
+  color: white;
+  padding: 20px;
+  text-align: center;
 }
-
+img {
+  display: block;
+  max-width: 100%;
+  height: auto;
+  margin: 0 auto;
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
 nav ul {
-    list-style: none;
-    padding: 0;
+  list-style: none;
+  padding: 0;
 }
-
 nav ul li {
-    display: inline;
-    margin: 0 15px;
+  display: inline;
+  margin: 0 15px;
 }
-
 nav ul li a {
-    color: white;
     text-decoration: none;
-    font-weight: bold;
+  padding: 10px;
+  transition: color 0.3s ease;
 }
-
-/* Section Styles */
+nav ul li a:hover {
+  color:white;
+}
 section {
-    padding: 20px;
-    background-color: white;
-    margin: 20px;
-    line-height: 2;
-    border-radius: 8px;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  padding: 20px;
+  background-color: white;
+  margin: 20px;
+  line-height: 2;
+  border-radius: 8px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
 }
-
-/* Table Styles */
 table {
-    width: 100%;
-    border-collapse: collapse;
-    margin-top: 10px;
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 10px;
 }
-
-table, th, td {
-    border: 1px solid #333;
-    padding: 10px;
-    text-align: left;
+table,
+th,
+td {
+  border: 1px solid #333;
+  padding: 10px;
+  text-align: left;
 }
-
 th {
-    background: rgb(20, 24, 46);
-    background: radial-gradient(circle, rgb(9, 15, 41) 0%, rgb(34, 16, 114) 100%);
-    color: white;
+  background: rgb(20, 24, 46);
+  background: radial-gradient(circle, rgb(9, 15, 41) 0%, rgb(34, 16, 114) 100%);
+  color: white;
 }
-
-/* Form Styles */
 form {
-    text-align: justify center;
-    width: 50%;
-    margin: auto;
-    padding: 20px;
-    border: 2px solid black;
-    border-radius: 10px;
-    
+  text-align: justify center;
+  width: 50%;
+  margin: auto;
+  padding: 20px;
+  border: 2px solid black;
+  border-radius: 10px;
+  width: 90%;
+  max-width: 600px;
 }
-
+input[type="text"],
+input[type="email"],
+textarea {
+  display: flex !important;
+  width: %;
+  padding: 10px;
+  margin: 10px 0;
+  border: 1px solid #333;
+  border-radius: 5px;
+}
+label {
+  display: block;
+  margin-bottom: 5px; 
+}
 
 input[type="submit"] {
-    background-color: #333;
-    color: white;
-    border: none;
-    cursor: pointer;
-    padding: 10px;
-    margin-top: 10px;
+  background-color: #333;
+  color: white;
+  border: none;
+  cursor: pointer;
+  padding: 10px;
+  margin-top: 10px;
 }
-
+input[type="submit"] {
+  background: linear-gradient(90deg, #333 0%, #555 100%);
+  padding: 12px;
+  font-size: 16px;
+  border-radius: 5px;
+  transition: 0.3s ease;
+}
 input[type="submit"]:hover {
-    background-color: #555;
+  background: linear-gradient(90deg, #555 0%, #777 100%);
 }
-
-/* Footer Styles */
 footer {
-    text-align: center;
-    padding: 10px;
-    background: rgb(20, 24, 46);
-    background: radial-gradient(circle, rgb(9, 15, 41) 0%, rgb(34, 16, 114) 100%);
-    color: white;
-    position: relative;
-    bottom: 0;
-    width: 100%;
+  text-align: center;
+  padding: 10px;
+  background: rgb(20, 24, 46);
+  background: radial-gradient(circle, rgb(9, 15, 41) 0%, rgb(34, 16, 114) 100%);
+  color: white;
+  position: relative;
+  bottom: 0;
+  width: 100%;
+  margin-top: auto;
 }

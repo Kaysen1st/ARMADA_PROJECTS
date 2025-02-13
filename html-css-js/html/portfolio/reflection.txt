@@ -1,0 +1,7 @@
+Time Taken: 30 minutes
+
+Challenges Faced & Solutions:
+One challenge was dealing with the <table border="1"> attribute, which is now considered obsolete in modern HTML. 
+The recommended approach is to use CSS instead. However, for this assignment, I kept the border="1" attribute to meet the basic HTML requirement. 
+Another challenge was ensuring proper form structure with labels and input elements, making sure everything was well-organized. 
+Overall, I resolved these by reviewing HTML documentation and practicing clean, semantic coding.

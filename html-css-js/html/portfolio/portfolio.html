@@ -1,103 +1,125 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>My Portfolio</title>
-    <link rel="stylesheet" href="styles.css" />
-  </head>
 
-  <body>
-    <header>
-      <h1>Welcome to My Portfolio</h1>
-      <nav>
-        <ul>
-          <li><a href="#home">Home</a></li>
-          <li><a href="#about">About Me</a></li>
-          <li><a href="#projects">Projects</a></li>
-        </ul>
-      </nav>
-    </header>
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>My Portfolio</title>
+	<link rel="stylesheet" href="styles.css">
+</head>
 
-    <section id="about">
-      <h2>About Me</h2>
-      <p>
-        Hello! I'm passionate about web development and enjoy creating projects
-        that solve real-world problems. This portfolio showcases some of my work
-        and interests.
-      </p>
-    </section>
+<body>
 
-    <section id="projects">
-      <h2>My Projects</h2>
-      <table>
-        <tr>
-          <th>Project Name</th>
-          <th>Description</th>
-          <th>Year</th>
-        </tr>
-        <tr>
-          <td>Project One</td>
-          <td>A website that helps users track their daily habits.</td>
-          <td>2024</td>
-        </tr>
-        <tr>
-          <td>Project Two</td>
-          <td>A simple to-do list application with local storage.</td>
-          <td>2024</td>
-        </tr>
-        <tr>
-          <td>Project Three</td>
-          <td>A photography portfolio showcasing my best work.</td>
-          <td>2023</td>
-        </tr>
-      </table>
-    </section>
+	<header>
+		<h1>Welcome to My Portfolio</h1>
+		<hr>
+		<nav>
+			<ul>
+				<li><a href="#home">Home</a></li>
+				<li><a href="#about">About Me</a></li>
+				<li><a href="#projects">Projects</a></li>
+			</ul>
+		</nav>
+	</header>
+	<section>
+		<h2>About Me</h2>
+		<p>
+			I am a web developer with a passion for creating beautiful and functional websites.
+		</p>
+	</section>
+	<div>
+		<img src="images/god-is-good.jpg" alt="A photo of the author">
+	</div>
 
-    <section id="contact">
-      <h2>Contact Me</h2>
-      <form>
-        <label for="name">Full Name:</label>
-        <input type="text" id="name" name="name" /><br /><br />
+	<section>
+		<h2>My Projects</h2>
+		<table>
+			<tr>
+				<th>Project Name</th>
+				<th>Description</th>
+				<th>Year</th>
+			</tr>
+			<tr>
+				<td>Mental Health</td>
+				<td>A Chatbot that answers common questions with Ai.</td>
+				<td>2024</td>
+			</tr>
+			<tr>
+				<td>vilentine-proposal</td>
+				<td>A simple yes or no proposal but with a twist you cant click no.</td>
+				<td>2024</td>
+			</tr>
+			<tr>
+				<td>Project Three</td>
+				<td>A photography portfolio showcasing my best work.</td>
+				<td>2023</td>
+			</tr>
+		</table>
+	</section>
 
-        <label for="email">Email Address:</label>
-        <input type="email" id="email" name="email" /><br /><br />
-        <fieldset>
-          <legend>How did you hear about this portfolio?</legend>
-          <input type="radio" id="friend" name="source" value="Friend" />
-          <label for="friend">Friend</label><br />
-          <input type="radio" id="social" name="source" value="Social Media" />
-          <label for="social">Social Media</label><br />
-          <input type="radio" id="search" name="source" value="Search Engine" />
-          <label for="search">Search Engine</label><br />
-          <input type="radio" id="other" name="source" value="Other" />
-          <label for="other">Other</label><br /><br />
-        </fieldset>
-        <fieldset>
-          <legend>Skills/Interests</legend>
-          <input
-            type="checkbox"
-            id="webdev"
-            name="skills"
-            value="Web Development"
-          />
-          <label for="webdev">Web Development</label><br />
-          <input type="checkbox" id="design" name="skills" value="Design" />
-          <label for="design">Design</label><br />
-          <input type="checkbox" id="photo" name="skills" value="Photography" />
-          <label for="photo">Photography</label><br /><br />
-        </fieldset>
+	<section>
+		<form>
+			<h2>Contact Me</h2>
+			<hr>
 
-        <label for="comments">Comments or Messages:</label><br />
-        <textarea id="comments" name="comments" rows="4" cols="50"></textarea
-        ><br /><br />
+			<label for="name">Full Name:</label>
+			<input type="text" name="name">
 
-        <input type="submit" value="Submit" />
-      </form>
-    </section>
 
-    <footer>
-      <p>&copy; Samuel 2025</p>
-    </footer>
-  </body>
+			<label for="email">Email Address:</label>
+			<input type="email" name="email">
+
+
+			<fieldset>
+				<legend>How did you hear about this portfolio?</legend>
+
+				<label for="friend">
+					<input type="radio" id="friend" name="source" value="Friend"> Friend
+				</label>
+
+				<label for="social">
+					<input type="radio" id="social" name="source" value="Social Media"> Social Media
+				</label>
+
+				<label for="search">
+					<input type="radio" id="search" name="source" value="Search Engine"> Search Engine
+				</label>
+
+				<label for="other">
+					<input type="radio" id="other" name="source" value="Other"> Other
+				</label>
+			</fieldset>
+
+			<fieldset>
+				<legend>Skills/Interests</legend>
+
+				<label for="webdev">
+					<input type="checkbox" id="webdev" name="skills" value="Web Development"> Web Development
+				</label>
+
+				<label for="design">
+					<input type="checkbox" id="design" name="skills" value="Design"> Design
+				</label>
+
+				<label for="photo">
+					<input type="checkbox" id="photo" name="skills" value="Photography"> Photography
+				</label>
+			</fieldset>
+
+
+			<label for="comments">Comments or Messages:</label>
+
+			<textarea id="comments" name="comments" rows="4" cols="60"></textarea>
+
+			<input type="submit" value="Submit">
+
+		</form>
+	</section>
+
+	<footer>
+		<p>&copy; Samuel 2025</p>
+	</footer>
+
+</body>
+
 </html>

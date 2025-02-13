@@ -1,0 +1,69 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <title>Survey Form</title>
+</head>
+
+<body>
+    <h1>Survey Form</h1>
+    <hr />
+    <form>
+
+        <pre> <label for="name">Full Name:</label></pre>
+        <input type="text" id="name" name="name" />
+        <pre> <label for="email">Email:</label></pre>
+        <input type="text" id="email" name="email" />
+
+        <fieldset>
+            <legend>
+                <h4>How satisfied are you with our service?</h4>
+            </legend>
+            <input type="radio" id="very-satisfied" name="satisfaction" value="very-satisfied" />
+            <label for="very-satisfied">Very Satisfied</label>
+            <br />
+            <input type="radio" id="satisfied" name="satisfaction" value="satisfied" />
+            <label for="satisfied">Satisfied</label>
+            <br />
+            <input type="radio" id="neutral" name="satisfaction" value="neutral" />
+            <label for="neutral">Neutral</label>
+            <br />
+            <input type="radio" id="dissatisfied" name="satisfaction" value="dissatisfied" />
+            <label for="dissatisfied">Dissatisfied</label>
+            <br />
+            <input type="radio" id="very-dissatisfied" name="satisfaction" value="very-dissatisfied" />
+            <label for="very-dissatisfied">Very Dissatisfied</label>
+        </fieldset>
+
+        <fieldset>
+            
+            <legend>
+                <h4>What features do you value most?</h4>
+            </legend>
+            <input type="checkbox" id="ease-of-use" name="features" value="ease-of-use" />
+            <label for="ease-of-use">Ease of Use</label>
+            <br />
+            <input type="checkbox" id="design" name="features" value="design" />
+            <label for="design">Design</label>
+            <br />
+            <input type="checkbox" id="customer-support" name="features" value="customer-support" />
+            <label for="customer-support">Customer Support</label>
+        </fieldset>
+
+        <label>
+            What best describes you?
+            <select name="role" id="role">
+                <option value="student">Student</option>
+                <option value="professional">Professional</option>
+                <option value="other">Other</option>
+            </select>
+        </label>
+        <h4>Additional Feedback:</h4>
+        <textarea name="feedback" id="feedback" cols="30" rows="10"></textarea>
+        <br />
+
+        <input type="button" value="Submit" />
+    </form>
+</body>
+
+</html>

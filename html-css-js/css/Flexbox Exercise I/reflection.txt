@@ -1,0 +1,6 @@
+Time Taken: 45 minutes
+
+This challenge helped reinforce my understanding of flexbox, layout structuring, and debugging CSS issues efficiently.
+Aligning <aside> and <section>: Initially, they weren’t positioned correctly. 
+I struggled to make them sit side by side without breaking the layout. 
+The issue was resolved by using display: flex on the parent element and adjusting their widths properly.

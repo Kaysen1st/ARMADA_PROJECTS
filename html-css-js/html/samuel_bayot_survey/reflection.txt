@@ -1,0 +1,9 @@
+Time Taken:
+I completed the survey form in 30 minutes.
+
+Challenges & Reflection:
+One challenge I faced was figuring out how to add a border around certain sections without using CSS. 
+After some research, I discovered that using <fieldset> and <legend> was an effective way to group related form elements while also providing a built-in border. 
+This helped me structure the form better without needing external styles.
+
+Overall, this task reinforced my understanding of form elements and how to use semantic HTML for better organization.
