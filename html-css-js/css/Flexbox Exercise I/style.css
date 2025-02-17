@@ -12,15 +12,16 @@ aside {
   background-color: #9b59b6;
   height: 300px;
   width: 300px;
-  float: left;
+  display: inline-block;
 }
 
 section {
   background-color: #1abc9c;
   height: 300px;
-  width: 890px;
-  float: right;
-  margin-bottom: 10px;
+  width: 876px;
+  display: inline-block;
+  margin-left: 20px;
+
 }
 footer {
   background-color: #e74c3c;
