@@ -1,0 +1,8 @@
+Reflection:
+Time to Finish: 4 hours
+I concentrated on replicating the Bootstrap landing page in pure CSS and HTML. 
+The most critical challenge was incorporating the three-part navbar layout, especially centering the search field without compromising on alignment of the rest of the elements. 
+Application of CSS Flexbox with each section having flex: 1 resolved this challenge. 
+Changing to a dark mode involved selecting careful colors and handling contrast, which I managed by applying CSS variables for uniformity. 
+The responsive design needed careful consideration of what to change at various breakpoints.
+Overall, this project taught me more about complex layouts, theming, and responsive design principles.

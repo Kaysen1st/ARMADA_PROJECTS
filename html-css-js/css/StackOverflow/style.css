@@ -1,0 +1,480 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen-Sans, Ubuntu, Cantarell, sans-serif;
+}
+
+body {
+    display: flex;
+    flex-direction: column;
+    height: 100vh;
+    overflow: hidden;
+}
+
+header {
+    position: sticky;
+    top: 0;
+    background: #f8f9f9;
+    border-bottom: 1px solid #e3e6e8;
+    padding: 8px 16px;
+    display: flex;
+    align-items: center;
+    gap: 16px;
+    z-index: 1000;
+}
+img{
+    height: 40px;
+    width: 200px;
+}
+.logo {
+    height: 30px;
+    display: flex;
+    align-items: center;
+    gap: 4px;
+    color: #F48024;
+    font-size: 20px;
+    font-weight: bold;
+    text-decoration: none;
+}
+
+.nav-links {
+    display: flex;
+    gap: 16px;
+}
+
+.nav-links a {
+    color: #525960;
+    text-decoration: none;
+    font-size: 14px;
+}
+
+.search-bar {
+    flex: 1;
+    max-width: 700px;
+    margin: 0 16px;
+    position: relative;
+}
+
+.search-bar input {
+    width: 100%;
+    padding: 8px 32px 8px 8px;
+    border: 1px solid #e3e6e8;
+    border-radius: 3px;
+}
+
+.auth-buttons {
+    display: flex;
+    gap: 8px;
+}
+
+.btn {
+    padding: 8px 16px;
+    border-radius: 3px;
+    font-size: 13px;
+    text-decoration: none;
+}
+
+.btn-login {
+    color: #39739d;
+    background-color: #e1ecf4;
+    border: 1px solid #7aa7c7;
+}
+
+.btn-signup {
+    color: white;
+    background-color: #0a95ff;
+    border: 1px solid #0a95ff;
+}
+
+.container {
+    display: flex;
+    height: 100vh;
+    overflow: hidden;
+}
+
+aside {
+    width: 240px;
+    background-color: #fff;
+    border-right: 1px solid #e3e6e8;
+    position: sticky;
+    top: 0;
+    height: 100vh;
+    overflow-y: auto;
+    padding: 20px;
+}
+
+.sidebar-nav {
+    padding: 24px 0;
+}
+
+.sidebar-nav a {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    padding: 8px 16px;
+    color: #525960;
+    text-decoration: none;
+    font-size: 13px;
+    line-height: 2;
+    cursor: pointer;
+}
+
+.sidebar-nav a:hover {
+    background-color: #f1f2f3;
+    color: #0c0d0e;
+}
+
+.sidebar-nav a img {
+    width: 18px;
+    height: 18px;
+    opacity: 0.6;
+}
+
+.sidebar-nav a:hover img {
+    opacity: 0.8;
+}
+
+.sidebar-nav h5 {
+    margin-top: 16px;
+    padding: 8px 16px;
+    color: #6a737c;
+    font-size: 11px;
+    font-weight: 500;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+}
+
+/* Active state for the current page */
+.sidebar-nav a.active {
+    background-color: #f1f2f3;
+    color: #0c0d0e;
+    font-weight: bold;
+}
+
+.sidebar-nav a.active img {
+    opacity: 1;
+}
+
+/* Adjust spacing for items after headings */
+.sidebar-nav h5 + a {
+    margin-top: 4px;
+}
+main {
+    flex: 1;
+    padding: 32px;
+    background-color: #ffffff;
+    overflow-y: auto;
+    
+}
+
+.hero {
+    max-width: 1264px;
+    margin: 0 0 48px 0;
+    display: flex;
+    align-items: flex-start;
+    gap: 32px;
+    background-color: #f8f9f9;  /* Stack Overflow's light gray background */
+    padding: 32px;
+    border-radius: 5px;
+    position: relative;
+}
+
+
+.hero-content {
+    flex: 1;
+}
+
+.hero-content h1 {
+    font-size: 2.75rem;
+    color: #232629;
+    margin-bottom: 24px;
+    line-height: 1.3;
+}
+
+.hero-content h1 .developer-text {
+    display: inline-block;
+    background-image: url('Stack Overflow/Stack Overflow/background-image.png'); /* Replace with your actual background image */
+    background-repeat: no-repeat;
+    background-size: 100% 100%;
+    padding: 4px 8px;
+    color: white;
+    position: relative;
+}
+
+/* Remove the previous highlight style */
+.hero-content span.highlight {
+    background-color: transparent;
+    padding: 0;
+    border-radius: 0;
+}
+
+.hero-content p {
+    font-size: 1.15rem;
+    color: #6a737c;
+    margin-bottom: 24px;
+    line-height: 1.5;
+}
+
+.hero-buttons {
+    display: flex;
+    gap: 12px;
+}
+
+.hero-image {
+    flex: 1;
+    max-width: 500px;
+}
+
+.hero-image img {
+    margin-bottom:30px;
+    width: 550px;
+    height: auto;
+    position: absolute;
+    right: 0;
+    top: 45px;
+}
+
+.section-title {
+    font-size: 1.6rem;
+    color: #232629;
+    margin: 32px 0 24px 0;
+}
+
+.services-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 24px;
+    margin-bottom: 48px;
+    position: relative;
+    border: 1px solid #e3e6e8;
+    border-radius: 5px;
+}
+.teams {
+    max-width: 1264px;
+    margin: 0 0 48px 0;
+    display: flex;
+    align-items: flex-start;
+    gap: 32px;
+    background-color: #f8f9f9;  /* Stack Overflow's light gray background */
+    padding: 32px;
+    border-radius: 5px;
+}
+
+div.hero-teams {
+    max-width: 500px;
+    display: grid;
+    justify-content: flex-end;
+}
+
+.hero-teams img {
+    margin-bottom:30px;
+    width: 450px;
+    height: auto;
+    position: absolute;
+    right: 0;
+    top: 15px;
+}
+
+.service-card {
+    padding: 24px;
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+}
+.services-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 16px;
+    margin-bottom: 32px;
+    max-width: 1264px;
+}
+
+.service-card {
+    padding: 24px;
+    border: 1px solid #e3e6e8;
+    border-radius: 5px;
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+    min-height: 160px; /* Reduced height */
+}
+
+.service-logo {
+    height: 32px; /* Smaller logo */
+    margin-bottom: 4px;
+}
+
+.service-description {
+    color: #6a737c;
+    line-height: 1.4;
+    font-size: 14px; /* Smaller text */
+    margin-bottom: 12px;
+}
+
+.overflowAI {
+    max-width: 1264px;
+    margin: 0 0 32px 0;
+}
+
+.overflowAI .service-card.dark {
+    background-color: #2d2d2d;
+    padding: 24px;
+    min-height: 200px;
+    position: relative;
+}
+
+.hero-Ai img {
+    margin-bottom:30px;
+    width: 450px;
+    height: auto;
+    position: absolute;
+    right: 0;
+    top: 20px;
+}
+
+.service-buttons {
+    display: flex;
+    gap: 8px;
+    margin-top: auto;
+}
+
+.btn {
+    padding: 6px 12px;
+    font-size: 12px;
+    border-radius: 3px;
+}
+
+.service-logo {
+    height: 40px;
+    margin-bottom: 8px;
+}
+img.service-logo {
+    display: inline-block;
+    margin-top: 0;
+}
+.hero-image img{
+    margin-bottom:30px;
+    width: 450px;
+    height: auto;
+    position: absolute;
+    right: 0;
+    top: 20px;
+}
+.service-api img.service-logo {
+
+    width: 170px;
+    height: 60px;
+}
+.service-discription {
+    color: #6a737c;
+    padding: inherit;
+}
+.service-title {
+    font-size: 1.3rem;
+    color: #232629;
+    margin-bottom: 8px;
+}
+
+.dark .service-title {
+    color: white;
+}
+
+.service-description {
+    color: #6a737c;
+    line-height: 1.5;
+    margin-bottom: 16px;
+}
+
+.dark .service-description {
+    color: #d0d4d7;
+}
+
+.service-buttons {
+    display: flex;
+    gap: 12px;
+    margin-top: auto;
+}
+
+.btn {
+    padding: 8px 16px;
+    border-radius: 3px;
+    font-size: 13px;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+.btn-primary {
+    background-color: #0a95ff;
+    color: white;
+    border: 1px solid #0a95ff;
+}
+
+.btn-secondary {
+    background-color: transparent;
+    color: #0a95ff;
+    border: 1px solid #0a95ff;
+}
+
+.btn-orange {
+    background-color: #F48024;
+    color: white;
+    border: 1px solid #F48024;
+}
+.work-section {
+    max-width: 1264px;
+    margin: 32px 0;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 48px;
+    padding: 24px;
+    background-color: #f8f9f9;
+    border-radius: 5px;
+}
+
+.work-section .hero-content {
+    flex: 1;
+    max-width: 500px;
+}
+
+.work-section .service-logo {
+    height: 32px;
+    margin-bottom: 16px;
+}
+
+.work-section .service-description {
+    font-size: 14px;
+    line-height: 1.4;
+    color: #6a737c;
+    margin-bottom: 24px;
+}
+
+.work-section .service-buttons {
+    display: flex;
+    gap: 8px;
+}
+
+.work-section .btn-primary {
+    background-color: #0a95ff;
+    color: white;
+    padding: 8px 16px;
+    border-radius: 3px;
+    text-decoration: none;
+    font-size: 13px;
+    border: 1px solid #0a95ff;
+}
+
+.work-section .hero-work {
+    flex: 1;
+    display: flex;
+    justify-content: flex-end;
+    max-width: 500px;
+}
+
+.work-section .hero-work img {
+    width: 100%;
+    height: auto;
+    max-width: 450px;
+    object-fit: contain;
+}

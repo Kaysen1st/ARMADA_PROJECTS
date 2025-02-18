@@ -1,0 +1,177 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Arial, sans-serif;
+}
+
+body {
+    background-color: #000;
+    color: white;
+}
+
+.header {
+    padding: 1.25rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    position: absolute;
+    width: 100%;
+    top: 0;
+    left: 0;
+}
+
+.logo {
+    height: 60px;
+    width: 160px;
+    margin-left: 150px;
+}
+
+form .wrapper {
+    display: flex;
+    align-items: center;
+}
+
+.sign-in {
+    background: #e50914;
+    color: white;
+    padding: 8px 16px;
+    border-radius: 3px;
+    text-decoration: none;
+    margin-right:150px;
+}
+
+.role-select {
+    background-color: transparent; 
+    color: white; 
+    border: 1px solid white; 
+    padding: 5px 10px; 
+    font-size: 16px; 
+    margin-right:10px;
+}
+.hero {
+    height: 80vh;
+    background: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)),
+                url('images/bg.jpg');
+    background-size: cover;
+    background-position: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    padding: 0 20px;
+}
+
+.hero h1 {
+    font-size: 48px;
+    margin-bottom: 20px;
+}
+.hero h1 span {
+    display: block;
+  }
+.hero p {
+    font-size: 24px;
+    margin-bottom: 30px;
+}
+
+.email-signup {
+    display: flex;
+    gap: 10px;
+    max-width: 600px;
+    width: 100%;
+}
+
+.email-signup input {
+    flex: 1;
+    padding: 15px;
+    border: 1px solid #ccc;
+    border-radius: 3px;
+    color: #000;
+    background-color: transparent;
+}
+
+.email-signup button {
+    background: #e50914;
+    color: white;
+    padding: 15px 30px;
+    border: none;
+    border-radius: 3px;
+    cursor: pointer;
+    white-space: nowrap;
+}
+
+.trending {
+    padding: 40px;
+}
+
+.trending h2 {
+    margin-bottom: 20px;
+    display: flex;
+}
+
+.movie-grid {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    overflow-x: auto;
+    padding-bottom: 20px;
+}
+
+.movie-card {
+    position: relative;
+    min-width: 200px;
+}
+
+.movie-card img {
+    width: 100%;
+    height: 300px;
+    object-fit: cover;
+    border-radius: 4px;
+}
+
+.features {
+    padding: 40px;
+}
+
+.features h2 {
+    margin-bottom: 20px;
+    display: flex;
+}
+
+.feature-grid {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    overflow-x: auto;
+    padding-bottom: 20px;
+}
+
+.feature-card {
+    background: #132144;
+    padding: 20px 30px; 
+    border-radius: 4px;
+    text-align: center;
+    max-width: 250px; 
+}
+
+.feature-card h3 {
+    margin-bottom: 10px;
+    color: white;
+}
+
+.feature-card p {
+    color: #ccc;
+    font-size: 14px;
+}
+
+
+.footer {
+    display: flex;
+    flex-direction: column; 
+    justify-content: center; 
+    align-items: center; 
+    text-align: center; 
+    padding: 50px;
+    margin-bottom: 50px;
+}
