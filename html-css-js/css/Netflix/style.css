@@ -3,6 +3,7 @@
     padding: 0;
     box-sizing: border-box;
     font-family: Arial, sans-serif;
+    //outline: 1px solid red;
 }
 
 body {
@@ -10,8 +11,8 @@ body {
     color: white;
 }
 
-.header {
-    padding: 1.25rem;
+header {
+    padding: 1rem;
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -19,38 +20,45 @@ body {
     width: 100%;
     top: 0;
     left: 0;
+    z-index: 1000;
 }
 
 .logo {
-    height: 60px;
-    width: 160px;
-    margin-left: 150px;
+    height: 40px;
+    margin-left: 1rem;
 }
 
-form .wrapper {
+.logo img {
+    height: 100%;
+    width: auto;
+}
+
+.wrapper {
     display: flex;
     align-items: center;
+    gap: 1rem;
+    margin-right: 1rem;
+}
+
+.role-select {
+    background-color: transparent;
+    color: white;
+    border: 1px solid white;
+    padding: 0.5rem;
+    font-size: 0.9rem;
 }
 
 .sign-in {
     background: #e50914;
     color: white;
-    padding: 8px 16px;
+    padding: 0.5rem 1rem;
     border-radius: 3px;
     text-decoration: none;
-    margin-right:150px;
+    font-size: 0.9rem;
 }
 
-.role-select {
-    background-color: transparent; 
-    color: white; 
-    border: 1px solid white; 
-    padding: 5px 10px; 
-    font-size: 16px; 
-    margin-right:10px;
-}
 .hero {
-    height: 80vh;
+    min-height: 100vh;
     background: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)),
                 url('images/bg.jpg');
     background-size: cover;
@@ -60,41 +68,42 @@ form .wrapper {
     justify-content: center;
     align-items: center;
     text-align: center;
-    padding: 0 20px;
+    padding: 2rem;
 }
 
 .hero h1 {
-    font-size: 48px;
-    margin-bottom: 20px;
+    font-size: clamp(2rem, 5vw, 3.5rem);
+    margin-bottom: 1rem;
+    line-height: 1.2;
 }
-.hero h1 span {
-    display: block;
-  }
+
 .hero p {
-    font-size: 24px;
-    margin-bottom: 30px;
+    font-size: clamp(1rem, 3vw, 1.5rem);
+    margin-bottom: 2rem;
 }
 
 .email-signup {
     display: flex;
-    gap: 10px;
-    max-width: 600px;
+    gap: 0.5rem;
     width: 100%;
+    max-width: 600px;
+    flex-wrap: wrap;
 }
 
 .email-signup input {
     flex: 1;
-    padding: 15px;
+    min-width: 200px;
+    padding: 1rem;
     border: 1px solid #ccc;
     border-radius: 3px;
-    color: #000;
-    background-color: transparent;
+    background-color: rgba(0, 0, 0, 0.7);
+    color: white;
 }
 
 .email-signup button {
     background: #e50914;
     color: white;
-    padding: 15px 30px;
+    padding: 1rem 1.5rem;
     border: none;
     border-radius: 3px;
     cursor: pointer;
@@ -102,76 +111,105 @@ form .wrapper {
 }
 
 .trending {
-    padding: 40px;
+    padding: 2rem;
 }
 
 .trending h2 {
-    margin-bottom: 20px;
-    display: flex;
+    margin-bottom: 1.5rem;
+    font-size: clamp(1.5rem, 4vw, 2rem);
 }
 
 .movie-grid {
     display: flex;
-    justify-content: center;
-    gap: 20px;
-    overflow-x: auto;
-    padding-bottom: 20px;
+    flex-wrap: wrap;
+    gap: 1rem;
+    padding-bottom: 1rem;
 }
 
-.movie-card {
-    position: relative;
-    min-width: 200px;
+.movie-grid > * {
+    flex: 1 1 200px; /* Minimum 200px width, but flexible */
+    max-width: 1fr;
 }
 
-.movie-card img {
+.movie-grid li img {
     width: 100%;
-    height: 300px;
+    height: auto;
+    aspect-ratio: 2/3;
     object-fit: cover;
     border-radius: 4px;
 }
 
 .features {
-    padding: 40px;
+    padding: 2rem;
 }
 
 .features h2 {
-    margin-bottom: 20px;
-    display: flex;
+    margin-bottom: 1.5rem;
+    font-size: clamp(1.5rem, 4vw, 2rem);
+    text-align: center;
 }
-
-.feature-grid {
-    display: flex;
-    justify-content: center;
-    gap: 20px;
-    overflow-x: auto;
-    padding-bottom: 20px;
+article {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 1.5rem;
+    padding-bottom: 1rem;
 }
 
 .feature-card {
     background: #132144;
-    padding: 20px 30px; 
+    padding: 1.5rem;
     border-radius: 4px;
     text-align: center;
-    max-width: 250px; 
 }
 
 .feature-card h3 {
-    margin-bottom: 10px;
-    color: white;
+    margin-bottom: 1rem;
+    font-size: clamp(1.1rem, 3vw, 1.3rem);
 }
 
 .feature-card p {
     color: #ccc;
-    font-size: 14px;
+    font-size: clamp(0.9rem, 2vw, 1rem);
+    line-height: 1.5;
+}
+.footer {
+    min-height: 30vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 3rem 2rem;
+    text-align: center;
+    margin: 0 auto;
+    max-width: 800px;
 }
 
+.footer p {
+    margin-bottom: 2rem;
+    font-size: clamp(1rem, 3vw, 1.2rem);
+    width: 100%;
+}
 
-.footer {
-    display: flex;
-    flex-direction: column; 
-    justify-content: center; 
-    align-items: center; 
-    text-align: center; 
-    padding: 50px;
-    margin-bottom: 50px;
+.footer .email-signup {
+    margin: 0 auto;
+    justify-content: center;
+}
+
+@media screen and (max-width: 768px) {
+    .footer {
+        padding: 2rem 1rem;
+    }
+    
+    .footer .email-signup {
+        flex-direction: column;
+        align-items: center; 
+        width: 100%;
+        max-width: 400px;
+    }
+}
+
+@media screen and (max-width: 480px) {
+    .footer {
+        padding: 1.5rem 1rem;
+    }
 }

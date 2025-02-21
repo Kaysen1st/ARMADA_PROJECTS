@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bootstrap Practice Page</title>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.0/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <!-- Navbar Component -->
+    <nav class="navbar navbar-expand-lg navbar-light bg-light">
+        <div class="container">
+            <a class="navbar-brand" href="#">Bootstrap Demo</a>
+            <div class="navbar-nav">
+                <a class="nav-link active" href="#">Home</a>
+                <a class="nav-link" href="#">About</a>
+                <a class="nav-link" href="#">Contact</a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Main Content Container -->
+    <div class="container">
+        <!-- Button Section -->
+        <div class="section">
+            <h2>Button Styles</h2>
+            <button class="btn btn-primary">Primary Button</button>
+            <button class="btn btn-secondary">Secondary Button</button>
+            <button class="btn btn-success">Success Button</button>
+            <button class="btn btn-danger">Danger Button</button>
+            <button class="btn btn-warning">Warning Button</button>
+            <button class="btn btn-info">Info Button</button>
+        </div>
+
+        <!-- Grid System Demo -->
+        <div class="section">
+            <h2>Grid System</h2>
+            <div class="row">
+                <div class="col-md-4">
+                    <div class="demo-col">Column 1</div>
+                </div>
+                <div class="col-md-4">
+                    <div class="demo-col">Column 2</div>
+                </div>
+                <div class="col-md-4">
+                    <div class="demo-col">Column 3</div>
+                </div>
+            </div>
+            
+            <div class="row mt-4">
+                <div class="col-md-6">
+                    <div class="demo-col">Half Width</div>
+                </div>
+                <div class="col-md-6">
+                    <div class="demo-col">Half Width</div>
+                </div>
+            </div>
+
+            <div class="row mt-4">
+                <div class="col-md-4 offset-md-4">
+                    <div class="demo-col">Offset Column</div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Form Section -->
+        <div class="section">
+            <h2>Contact Form</h2>
+            <form>
+                <div class="mb-3">
+                    <label for="name" class="form-label">Name</label>
+                    <input type="text" class="form-control" id="name" placeholder="Enter your name">
+                </div>
+                
+                <div class="mb-3">
+                    <label for="email" class="form-label">Email</label>
+                    <input type="email" class="form-control" id="email" placeholder="Enter your email">
+                </div>
+                
+                <div class="mb-3">
+                    <label for="message" class="form-label">Message</label>
+                    <textarea class="form-control" id="message" rows="3" placeholder="Your message"></textarea>
+                </div>
+
+                <button type="submit" class="btn btn-primary">Submit</button>
+                <button type="reset" class="btn btn-secondary">Reset</button>
+            </form>
+        </div>
+    </div>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.0/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>

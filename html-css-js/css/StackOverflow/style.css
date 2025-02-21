@@ -3,6 +3,7 @@
     padding: 0;
     box-sizing: border-box;
     font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen-Sans, Ubuntu, Cantarell, sans-serif;
+    //outline: 1px solid red;
 }
 
 body {
@@ -175,7 +176,6 @@ main {
     align-items: flex-start;
     gap: 32px;
     background-color: #f8f9f9;  /* Stack Overflow's light gray background */
-    padding: 32px;
     border-radius: 5px;
     position: relative;
 }
@@ -232,7 +232,7 @@ main {
     height: auto;
     position: absolute;
     right: 0;
-    top: 45px;
+   top: 0;
 }
 
 .section-title {
@@ -242,8 +242,7 @@ main {
 }
 
 .services-grid {
-    display: grid;
-    grid-template-columns: repeat(2, 1fr);
+    display: flex;
     gap: 24px;
     margin-bottom: 48px;
     position: relative;
@@ -254,7 +253,6 @@ main {
     max-width: 1264px;
     margin: 0 0 48px 0;
     display: flex;
-    align-items: flex-start;
     gap: 32px;
     background-color: #f8f9f9;  /* Stack Overflow's light gray background */
     padding: 32px;
@@ -477,4 +475,114 @@ img.service-logo {
     height: auto;
     max-width: 450px;
     object-fit: contain;
+}
+@media screen and (max-width: 1024px) {
+    .container {
+        flex-direction: column;
+    }
+
+    aside {
+        width: 100%;
+        height: auto;
+        position: static;
+    }
+
+    .hero {
+        flex-direction: column;
+        padding: 20px;
+    }
+
+    .hero-image img,
+    .hero-teams img,
+    .hero-Ai img {
+        position: static;
+        width: 100%;
+        height: auto;
+        margin: 20px 0;
+    }
+
+    .services-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .work-section {
+        flex-direction: column;
+        gap: 20px;
+    }
+
+    .work-section .hero-work img {
+        position: static;
+        width: 100%;
+        max-width: 100%;
+    }
+}
+
+/* Mobile screens */
+@media screen and (max-width: 768px) {
+    header {
+        flex-wrap: wrap;
+        gap: 8px;
+        padding: 8px;
+    }
+
+    header img {
+        width: 150px;
+    }
+
+    .nav-links {
+        width: 100%;
+        order: 3;
+        justify-content: space-between;
+        margin-top: 8px;
+    }
+
+    .search-bar {
+        flex: 1;
+        margin: 0 4px;
+    }
+
+    .hero-content h1 {
+        font-size: 1.8rem;
+    }
+
+    .hero-content p {
+        font-size: 1rem;
+    }
+
+    .service-buttons {
+        flex-direction: column;
+    }
+
+    .btn {
+        width: 100%;
+        text-align: center;
+    }
+}
+
+/* Small mobile screens */
+@media screen and (max-width: 480px) {
+    .hero-content h1 {
+        font-size: 1.5rem;
+    }
+
+    .section-title {
+        font-size: 1.3rem;
+    }
+
+    main {
+        padding: 16px;
+    }
+
+    .service-card {
+        padding: 16px;
+    }
+
+    .auth-buttons {
+        gap: 4px;
+    }
+
+    .btn {
+        padding: 6px 12px;
+        font-size: 12px;
+    }
 }
