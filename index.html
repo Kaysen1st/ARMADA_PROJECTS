@@ -3,45 +3,49 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Bootstrap-like Layout</title>
-    <link rel="stylesheet" href="styles.css">
+    <title>My eCommerce</title>
+    <script src="https://cdn.tailwindcss.com"></script>
 </head>
-<body>
-    <header>
-        <nav>
-            <div class="container">
-                <a href="#" class="brand">Brand</a>
-                <ul class="nav-links">
-                    <li><a href="#">Home</a></li>
-                    <li><a href="#">About</a></li>
-                    <li><a href="#">Services</a></li>
-                    <li><a href="#">Contact</a></li>
-                </ul>
-            </div>
-        </nav>
+<body class="bg-gray-100">
+    <!-- Navbar -->
+    <nav class="bg-blue-600 p-4 text-white flex justify-between">
+        <h1 class="text-xl font-bold">MyShop</h1>
+        <div>
+            <a href="#login" class="mr-4">Login</a>
+            <a href="#signup">Sign Up</a>
+        </div>
+    </nav>
+    
+    <!-- Hero Section -->
+    <header class="text-center py-10">
+        <h2 class="text-3xl font-semibold">Welcome to MyShop</h2>
+        <p class="text-gray-700">Discover amazing deals on top products!</p>
     </header>
-
-    <main class="container">
-        <div class="row">
-            <section class="content">
-                <h1>Welcome to Our Website</h1>
-                <p>This is the main content area. Here you can add your primary content.</p>
-            </section>
-            <aside class="sidebar">
-                <h2>Sidebar</h2>
-                <ul>
-                    <li><a href="#">Link 1</a></li>
-                    <li><a href="#">Link 2</a></li>
-                    <li><a href="#">Link 3</a></li>
-                </ul>
-            </aside>
+    
+    <!-- Product Listings -->
+    <section class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6 p-6">
+        <div class="bg-white p-4 rounded-lg shadow">
+            <img src="https://via.placeholder.com/150" class="w-full rounded" alt="Product">
+            <h3 class="text-lg font-semibold my-2">Product Name</h3>
+            <p class="text-gray-600">$20</p>
+            <button class="mt-2 bg-blue-600 text-white px-4 py-2 rounded add-to-cart">Add to Cart</button>
         </div>
-    </main>
-
-    <footer>
-        <div class="container">
-            <p>&copy; 2023 Your Company. All rights reserved.</p>
-        </div>
-    </footer>
+        <!-- More products dynamically added here -->
+    </section>
+    
+    <!-- Shopping Cart -->
+    <div class="fixed bottom-4 right-4 bg-white p-4 shadow-lg rounded-lg">
+        <h3 class="font-semibold">Cart: <span id="cart-count">0</span> items</h3>
+    </div>
+    
+    <script>
+        let cartCount = 0;
+        document.querySelectorAll('.add-to-cart').forEach(button => {
+            button.addEventListener('click', () => {
+                cartCount++;
+                document.getElementById('cart-count').innerText = cartCount;
+            });
+        });
+    </script>
 </body>
 </html>

@@ -1,0 +1,284 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Legend of Zelda Pixel Game</title>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/tailwindcss/2.2.19/tailwind.min.js"></script>
+  <style>
+    @font-face {
+      font-family: 'PressStart2P';
+      src: url('https://cdnjs.cloudflare.com/ajax/libs/Press+Start+2P/1.0.0/PressStart2P-Regular.woff') format('woff');
+    }
+    
+    body {
+      font-family: 'PressStart2P', monospace;
+      background-color: #000;
+      image-rendering: pixelated;
+      overflow: hidden;
+    }
+    
+    .pixel-art {
+      image-rendering: pixelated;
+      image-rendering: -moz-crisp-edges;
+      image-rendering: crisp-edges;
+    }
+    
+    .menu-item {
+      transition: all 0.2s ease;
+      color: #fff;
+      text-shadow: 2px 2px 0px #000;
+    }
+    
+    .menu-item.active {
+      color: #E3CF57;
+      transform: scale(1.1);
+    }
+    
+    .triforce {
+      position: relative;
+      width: 60px;
+      height: 60px;
+    }
+    
+    .triangle {
+      position: absolute;
+      width: 0;
+      height: 0;
+      border-left: 30px solid transparent;
+      border-right: 30px solid transparent;
+      border-bottom: 52px solid #E3CF57;
+    }
+    
+    .triangle:nth-child(1) {
+      left: 0;
+      top: 0;
+    }
+    
+    .triangle:nth-child(2) {
+      left: -30px;
+      top: 52px;
+    }
+    
+    .triangle:nth-child(3) {
+      left: 30px;
+      top: 52px;
+    }
+    
+    .fairy {
+      position: absolute;
+      width: 8px;
+      height: 8px;
+      background-color: #fff;
+      border-radius: 50%;
+      box-shadow: 0 0 10px 5px rgba(255, 255, 255, 0.5);
+      opacity: 0.8;
+      animation: float 4s infinite ease-in-out;
+    }
+    
+    @keyframes float {
+      0%, 100% { transform: translateY(0) scale(1); }
+      50% { transform: translateY(-20px) scale(1.2); }
+    }
+    
+    .link-sprite {
+      width: 48px;
+      height: 48px;
+      background-image: url("data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAADAAAAAwCAYAAABXAvmHAAADkklEQVRoge2ZTUhUURTHf8+ZMSszaIpCW0SLFhFtgqJNEFQEfRAULYJo0apFQbRsGUGrqE1Bi1pEQR9QFkG0KAgiCCpKoih1xsx7p8W9j3nzZsaeaTR1fzDMm3vPvfd/zj333HM1IoLxFZFsseJrQgJmaSS+qKrpqo/R0dGsz2g0mvU5k8kwNjaGcw6AiYkJwuFw9r3uDx8KCwtD3nvvPYODg9nf8/LyiMVipFIpALz3WaW2t7czb948vPcYY7LOlkqlGBkZwVqLMYZoNEp1dTXxeJxUKoW1Fuccxhji8TiVlZUcmb+YWal+vh8a4M5QB9FolEQikdXxe08PxhhEhP7+fvbs2UNRURGJRIKWlhYAGhsbWbBgQdb5iy0bqC7Jp6OjI+tjKpXCOcfZs2f5NNrLDVtJKBTCOUdZWRkPHjygvr6e48eP4/3vbWOtpaysjOvXr1NcXExHRwcVFRUkk0mttFJKRIZ1GRoaYu3atRQUFPD48WMaGhoQkf/ks4hgjGFwcJD29nZCoRBtbW2ISEpnrRLn3IwISETYvXs3zc3NVFVVce/ePYwxxGIxisrKcM4hImitqaurY/v27Wzbtg2ttdbZw50JnFXOOZxzbNy4kaNHj7JmzRpUPv+5BEX58D0Fg4OI6SFcYbFKSGWiWGUQERKJBIlEgkQiQWNjI0VFRVhrsdYSiUQoLCzMvuvr6yMajbJ+/XpUf38/L168YMuWLTjnSCaTcSUi85X3VHtH5JtVvHaejpERzp8/z6lTp+jp6SEUClFbW8vJkyfZunUrpaWl2Ule5bCtra2cO3eOa9euUVNTw9KlS3UkEnlZVFT0aQpjFFrrE0rZg5MHJoKTa7uCq1evEg6HWbJkCU1NTbS0tPDy5cs/lCxnrTl56dIlLl68yKpVq1i8eDEG5wn+fgFzf37sxcb5yQ3vPZFIhJUrV/L27Vu6urry1D/MOY0bXa+h78VLlNKI96Dd98mVDKfSpyxzuZiRXRgErTXee5LJJCMjI7/2oowPzvPjqeT8gAcUSimcc3R3d/Pq1auZcDHAI9574vE4r1+/JpVKYZzDeh9s75kgN1H19vbS19c3Y/qdc9kDK5VK6Vwi9JPITRLhcJi5c+fOmNLcZJVIJCgsLMwqVLmH1phh0IfU/v37c4eaAi5cuMCmTZtyxQopWKJy5/6/8LdtXLNmzS95ngvcvHmTpqammRQ5hL8+mceKf+BvU/5/7sRqIBUAAAAASUVORK5CYII=");
+      background-size: cover;
+      animation: bobUpDown 1s infinite alternate ease-in-out;
+    }
+    
+    @keyframes bobUpDown {
+      from { transform: translateY(0); }
+      to { transform: translateY(5px); }
+    }
+    
+    .grass {
+      background-color: #3f9932;
+      position: relative;
+      overflow: hidden;
+    }
+    
+    .grass::after {
+      content: "";
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      background-image: 
+        radial-gradient(#5eb84d 10%, transparent 10%),
+        radial-gradient(#5eb84d 10%, transparent 10%);
+      background-size: 8px 8px;
+      background-position: 0 0, 4px 4px;
+      opacity: 0.3;
+    }
+  </style>
+</head>
+<body class="flex items-center justify-center h-screen bg-black p-4">
+  <div class="w-full max-w-2xl bg-blue-900 border-8 border-yellow-600 rounded-lg shadow-2xl overflow-hidden">
+    <!-- Title screen -->
+    <div id="titleScreen" class="flex flex-col items-center justify-between py-8 px-4 h-96 relative">
+      <div class="fairy absolute" style="top: 20%; left: 10%;"></div>
+      <div class="fairy absolute" style="top: 30%; left: 80%;"></div>
+      <div class="fairy absolute" style="top: 70%; left: 30%;"></div>
+      <div class="fairy absolute" style="top: 60%; left: 70%;"></div>
+      
+      <div class="text-center pt-8">
+        <h1 class="text-3xl text-yellow-400 mb-4">THE LEGEND OF</h1>
+        <div class="flex justify-center items-center mb-2">
+          <div class="triforce mr-4">
+            <div class="triangle"></div>
+            <div class="triangle"></div>
+            <div class="triangle"></div>
+          </div>
+          <h1 class="text-4xl text-yellow-400">ZELDA</h1>
+          <div class="triforce ml-4">
+            <div class="triangle"></div>
+            <div class="triangle"></div>
+            <div class="triangle"></div>
+          </div>
+        </div>
+        <h2 class="text-xl text-blue-300 italic">Pixel Adventure</h2>
+      </div>
+      
+      <div class="flex items-center mt-8 mb-4">
+        <div class="link-sprite mr-4"></div>
+        <ul class="menu text-lg">
+          <li id="newGame" class="menu-item active py-2 px-4 cursor-pointer">NEW GAME</li>
+          <li class="menu-item py-2 px-4 cursor-pointer">CONTINUE</li>
+          <li class="menu-item py-2 px-4 cursor-pointer">OPTIONS</li>
+        </ul>
+      </div>
+      
+      <div class="grass w-full h-16 mt-auto"></div>
+      
+      <div class="text-xs text-gray-400 absolute bottom-2 right-4">
+        PRESS ENTER TO SELECT
+      </div>
+    </div>
+    
+    <!-- Game screen (initially hidden) -->
+    <div id="gameScreen" class="hidden">
+      <div class="bg-green-700 h-96 relative p-4">
+        <div id="player" class="link-sprite absolute" style="top: 50%; left: 50%;"></div>
+        <div class="text-white text-sm absolute top-4 left-4">LIFE: ♥♥♥</div>
+        <div class="text-white text-sm absolute top-4 right-4">RUPEES: 0</div>
+      </div>
+    </div>
+  </div>
+
+  <script>
+    // Menu navigation
+    const menuItems = document.querySelectorAll('.menu-item');
+    let activeIndex = 0;
+    
+    // Handle keyboard navigation
+    document.addEventListener('keydown', (e) => {
+      // Arrow up/down navigation
+      if (e.key === 'ArrowUp') {
+        menuItems[activeIndex].classList.remove('active');
+        activeIndex = (activeIndex - 1 + menuItems.length) % menuItems.length;
+        menuItems[activeIndex].classList.add('active');
+        playSound('menu');
+      } else if (e.key === 'ArrowDown') {
+        menuItems[activeIndex].classList.remove('active');
+        activeIndex = (activeIndex + 1) % menuItems.length;
+        menuItems[activeIndex].classList.add('active');
+        playSound('menu');
+      }
+      
+      // Enter key to select menu item
+      if (e.key === 'Enter') {
+        if (activeIndex === 0) {
+          startNewGame();
+          playSound('select');
+        } else {
+          playSound('select');
+        }
+      }
+    });
+    
+    // Click navigation
+    menuItems.forEach((item, index) => {
+      item.addEventListener('click', () => {
+        menuItems[activeIndex].classList.remove('active');
+        activeIndex = index;
+        menuItems[activeIndex].classList.add('active');
+        
+        if (index === 0) {
+          startNewGame();
+          playSound('select');
+        } else {
+          playSound('select');
+        }
+      });
+      
+      // Hover effect
+      item.addEventListener('mouseenter', () => {
+        menuItems[activeIndex].classList.remove('active');
+        activeIndex = index;
+        menuItems[activeIndex].classList.add('active');
+        playSound('menu');
+      });
+    });
+    
+    // Create fairy animations at random positions
+    function createFairies() {
+      const container = document.getElementById('titleScreen');
+      for (let i = 0; i < 5; i++) {
+        const fairy = document.createElement('div');
+        fairy.className = 'fairy absolute';
+        fairy.style.top = `${Math.random() * 80}%`;
+        fairy.style.left = `${Math.random() * 80}%`;
+        fairy.style.animationDelay = `${Math.random() * 2}s`;
+        container.appendChild(fairy);
+      }
+    }
+    
+    // Start new game
+    function startNewGame() {
+      document.getElementById('titleScreen').classList.add('hidden');
+      document.getElementById('gameScreen').classList.remove('hidden');
+      
+      // Set up player movement
+      const player = document.getElementById('player');
+      const gameScreen = document.getElementById('gameScreen');
+      let playerX = 50;
+      let playerY = 50;
+      
+      document.addEventListener('keydown', (e) => {
+        const speed = 5;
+        
+        switch(e.key) {
+          case 'ArrowUp':
+            playerY = Math.max(0, playerY - speed);
+            break;
+          case 'ArrowDown':
+            playerY = Math.min(90, playerY + speed);
+            break;
+          case 'ArrowLeft':
+            playerX = Math.max(0, playerX - speed);
+            break;
+          case 'ArrowRight':
+            playerX = Math.min(90, playerX + speed);
+            break;
+        }
+        
+        player.style.top = `${playerY}%`;
+        player.style.left = `${playerX}%`;
+      });
+    }
+    
+    // Sound effects (simulated)
+    function playSound(type) {
+      // In a real implementation, we would play actual sound effects
+      console.log(`Playing ${type} sound`);
+    }
+    
+    // Create random fairies on load
+    window.addEventListener('load', createFairies);
+  </script>
+</body>
+</html>

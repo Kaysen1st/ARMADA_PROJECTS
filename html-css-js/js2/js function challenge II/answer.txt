@@ -1,0 +1,112 @@
+function generatePattern() {  
+    let result = "";  
+    for (let i = 1; i <= 3; i++) {  
+      for (let j = 1; j <= i; j++) {  
+        result += j + " ";  
+      }  
+      result += "\n";  
+    }  
+    return result;  
+  }  
+  
+  console.log(generatePattern());
+
+
+Uses two loops to generate a pattern:
+
+i = 1: Adds "1 ", then moves to the next line.
+
+i = 2: Adds "1 2 ", then moves to the next line.
+
+i = 3: Adds "1 2 3 ", then moves to the next line.
+
+
+The final output is:
+1 
+1 2 
+1 2 3 
+
+---------------------------------------------------------------------------------------
+function swapFirstLast(arr) {  
+  let first = arr.shift();  
+  let last = arr.pop();  
+  arr.unshift(last);  
+  arr.push(first);  
+  return arr;  
+}  
+
+let numbers = [10, 20, 30, 40];  
+console.log(swapFirstLast(numbers));  
+console.log(numbers);  
+
+[45, 60, 85, 90]  // My prediction: I thought the failing grades would be sorted from lowest to highest.
+
+scores = [85, 45, 90, 60]
+
+85 (>= 70) → push to passing = [85]
+
+45 (< 70) → unshift to passing = [45, 85]
+
+90 (>= 70) → push to passing = [45, 85, 90]
+
+60 (< 70) → unshift to passing = [60, 45, 85, 90]
+
+Final output: [60, 45, 85, 90].
+
+---------------------------------------------------------------------------------------
+  function updateStatus(tasks) {  
+    for (let task of tasks) {  
+      task.completed = !task.completed;  
+    }  
+    return tasks;  
+  }  
+  
+  let taskList = [  
+    { id: 1, completed: false },  
+    { id: 2, completed: true }  
+  ];  
+  
+  console.log(updateStatus(taskList));  
+  console.log(taskList);
+
+prediction output:
+[ { id: 1, completed: true }, { id: 2, completed: false } ]
+[ { id: 1, completed: true }, { id: 2, completed: false } ]
+
+Explanation:
+Since objects are passed by reference, modifying them inside the function also affects taskList.
+Both console.log(updateStatus(taskList)) and console.log(taskList) print the same modified array.
+
+---------------------------------------------------------------------------------------
+function findValue(arr, target) {  
+  for (let i = 0; i < arr.length; i++) {  
+    if (arr[i] === target) {  
+      return `Found at index ${i}`;  
+    }  
+  }  
+  return "Not found";  
+}  
+
+let data = [5, 12, 8, 130, 44];  
+console.log(findValue(data, 12));  
+console.log(findValue(data, 100));  
+
+  //my predictions answer is Found at index 1 and Not found
+
+output:
+Found at index 1
+Not found
+
+The loop runs:
+i = 0: arr[0] = 5 (not 12), continue.
+i = 1: arr[1] = 12 (match found!)
+The function returns "Found at index 1" and stops.
+
+The loop runs:
+i = 0: arr[0] = 5 (not 100), continue.
+i = 1: arr[1] = 12 (not 100), continue.
+i = 2: arr[2] = 8 (not 100), continue.
+i = 3: arr[3] = 130 (not 100), continue.
+i = 4: arr[4] = 44 (not 100), continue.
+The loop finishes without finding 100, so "Not found" is returned
+

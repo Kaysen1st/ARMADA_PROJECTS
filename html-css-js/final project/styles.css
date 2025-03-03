@@ -1,0 +1,75 @@
+/* Custom font for pixelated look */
+@font-face {
+    font-family: 'PixelFont';
+    src: url('https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap');
+}
+
+/* Global styles */
+* {
+    image-rendering: pixelated;
+    box-sizing: border-box;
+    font-family: 'PixelFont', monospace;
+}
+
+.font-pixel {
+    font-family: 'PixelFont', monospace;
+    letter-spacing: 1px;
+}
+
+.pixelated {
+    image-rendering: pixelated;
+    image-rendering: -moz-crisp-edges;
+    image-rendering: crisp-edges;
+}
+
+/* Animation for dialog typing effect */
+@keyframes typing {
+    from { width: 0 }
+    to { width: 100% }
+}
+
+/* Game screen elements */
+#game-container {
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.5);
+}
+
+#game-screen {
+    position: relative;
+}
+
+/* Avatar creator styles */
+.avatar-part {
+    width: 32px;
+    height: 32px;
+    image-rendering: pixelated;
+}
+
+/* Office items */
+.office-item {
+    position: absolute;
+    image-rendering: pixelated;
+}
+
+/* Player character */
+#player {
+    width: 32px;
+    height: 32px;
+    image-rendering: pixelated;
+    transition: all 0.2s ease;
+}
+
+/* Dialog box */
+#dialog-box {
+    height: auto;
+    min-height: 60px;
+    z-index: 100;
+}
+
+/* Button styling */
+button {
+    transition: all 0.1s ease;
+}
+
+button:active {
+    transform: scale(0.95);
+}

@@ -1,0 +1,95 @@
+1. Inventory Tracker
+let inventory = ["apple", "banana", "cherry", "date", "elderberry"];
+let inventoryCount = [10, 15, 5, 20, 7];
+
+for (let i = 0; i < inventory.length; i++) {
+  console.log(`${inventory[i]}: ${inventoryCount[i]}`);
+}
+console.log("\n");
+----------------------------------------------------------------
+apple: 10
+banana: 15
+cherry: 5
+date: 20
+elderberry: 7
+----------------------------------------------------------------
+Explanation:
+We have two arrays:
+(inventory) keeps fruit names.
+(inventoryCount) hold their amounts.
+The for loop cycles through every index and prints the fruit along with its quantity.
+----------------------------------------------------------------
+----------------------------------------------------------------
+2. Alphabetical Sorting
+let words = ["zebra", "apple", "mango", "cherry", "banana"];
+
+for (let i = 0; i < words.length; i++) {
+  for (let j = i + 1; j < words.length; j++) {
+    if (words[i] > words[j]) {
+      let temp = words[i];
+      words[i] = words[j];
+      words[j] = temp;
+    }
+  }
+}
+
+console.log(words);
+console.log("\n");
+----------------------------------------------------------------
+[ 'apple', 'banana', 'cherry', 'mango', 'zebra' ]
+----------------------------------------------------------------
+Explanation:
+We have a nested loop that compares each word with the one following it.
+If a letter is larger (appears later in the alphabet) than the one following it, we exchange them.
+The inner loop ensures that all the words are sorted.
+----------------------------------------------------------------
+----------------------------------------------------------------
+3. Unique Array Builder
+let uniqueNumbers = [];
+
+while (uniqueNumbers.length < 10) {
+  let randomNumber = Math.floor(Math.random() * 20) + 1;
+
+  // Check if the randomNumber already exists in the array
+  let exists = false;
+  for (let i = 0; i < uniqueNumbers.length; i++) {
+    if (uniqueNumbers[i] === randomNumber) {
+      exists = true;
+      break;
+    }
+  }
+
+  // If it doesn't exist, add it to the array
+  if (!exists) {
+    uniqueNumbers.push(randomNumber);
+  }
+}
+console.log(uniqueNumbers);
+console.log("\n");
+----------------------------------------------------------------
+[3, 12, 7, 18, 9, 15, 4, 11, 20, 5]
+----------------------------------------------------------------
+Explanation:
+We create a random number between 1 and 20.
+A while loop makes us obtain exactly 10 distinct numbers.
+The for loop looks if the number exists already in uniqueNumbers.
+Otherwise, we include it in the array.
+----------------------------------------------------------------
+----------------------------------------------------------------
+4. Triangle Checker
+let sideA = 7;
+let sideB = 10;
+let sideC = 5;
+
+if (sideA + sideB > sideC && sideB + sideC > sideA && sideA + sideC > sideB) {
+  console.log(`The sides ${sideA}, ${sideB}, and ${sideC} form a valid triangle.`);
+} else {
+  console.log(`The sides ${sideA}, ${sideB}, and ${sideC} do not form a valid triangle.`);
+}
+----------------------------------------------------------------
+The sides 7, 10, and 5 form a valid triangle.
+----------------------------------------------------------------
+Explanation:
+A triangle is valid if the addition of any two sides is larger than the third one.
+The if statement checks for all three cases.
+If this is true, we print valid triangle; otherwise, we print invalid triangle.
