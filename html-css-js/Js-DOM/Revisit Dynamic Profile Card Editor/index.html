@@ -1,0 +1,61 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Profile Card Editor</title>
+    <!-- Tailwind CSS via CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body class="bg-gray-100 p-4">
+    <div class="max-w-md mx-auto">
+        <!-- Profile Card -->
+        <div id="profileCard" class="bg-white rounded-lg shadow-md p-6 mb-6 text-center">
+            <div class="w-32 h-32 mx-auto mb-4 rounded-full overflow-hidden bg-gray-300">
+                <img id="profileImage" class="w-full h-full object-cover" 
+                     src="https://i.pinimg.com/736x/f5/ca/67/f5ca6704fd9ad9a57bdffb1c5fa16bf0.jpg" alt="Profile Picture">
+            </div>
+            <h2 id="profileName" class="text-xl font-bold">Rakuro Hizutome</h2>
+            <p id="profileBio" class="text-gray-600"> better known by his username Sunraku (サンラク Sanraku), is the main
+                protagonist of Shangri-La Frontier. Nicknamed the Trash Game Hunter, he starts playing the AAA game SLF
+                over his summer vacation for a change-of-pace, only for it to turn into a trash game when he is left
+                unable to equip armor after being cursed by the unique monster Lycagon.</p>
+        </div>
+
+        <!-- Profile Editor Form -->
+        <div class="bg-white rounded-lg shadow-md p-6">
+            <div class="mb-4">
+                <label for="nameInput" class="block font-medium text-gray-700 mb-1">Update Name:</label>
+                <input type="text" id="nameInput" placeholder="Enter Name" 
+                       class="w-full px-3 py-2 border border-gray-300 rounded-md">
+            </div>
+
+            <div class="mb-4">
+                <label for="bioInput" class="block font-medium text-gray-700 mb-1">Update Bio:</label>
+                <input type="text" id="bioInput" placeholder="Enter Bio" 
+                       class="w-full px-3 py-2 border border-gray-300 rounded-md">
+            </div>
+
+            <div class="mb-4">
+                <label for="imageInput" class="block font-medium text-gray-700 mb-1">Update Image URL:</label>
+                <input type="text" id="imageInput" placeholder="https://encrypted-tbn0.gstatic.com/images?q=tb" 
+                       class="w-full px-3 py-2 border border-gray-300 rounded-md">
+            </div>
+
+            <div class="mb-4">
+                <label for="bgColorInput" class="block font-medium text-gray-700 mb-1">Change Background Color:</label>
+                <input type="range" id="bgColorInput" min="0" max="360" value="0" 
+                       class="w-full h-2 bg-gray-200 rounded-lg appearance-none cursor-pointer">
+            </div>
+
+            <button id="updateProfileButton" 
+                    class="w-full bg-blue-500 hover:bg-blue-600 text-white font-medium py-2 px-4 rounded-md transition-colors">
+                Update Profile Card
+            </button>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>

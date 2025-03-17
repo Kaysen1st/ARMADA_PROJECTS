@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Color Selector</title>
+    <!-- Include Tailwind CSS from CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body class="bg-gray-100 min-h-screen transition-colors duration-300" id="body">
+
+    <div class="container mx-auto px-4 py-8 text-center">
+        <h1 class="text-4xl font-bold mb-4 text-white drop-shadow-md">Color Selector</h1>
+        <p class="text-xl mb-8 text-white drop-shadow-sm">Click a color to change the background and highlight the selected color.</p>
+        
+        <div id="container" class="max-w-md mx-auto bg-gray-200 p-8 rounded-lg shadow-lg mb-8 transition-colors duration-300 min-h-[300px] flex flex-col justify-center">
+            <div class="flex flex-wrap justify-center gap-4 mb-8">
+                <!-- Color buttons -->
+                <button class="color-box w-32 h-12 rounded-md text-white font-bold shadow-md hover:scale-105 transition-transform" style="background-color: red;" data-color="red">Red</button>
+                <button class="color-box w-32 h-12 rounded-md text-white font-bold shadow-md hover:scale-105 transition-transform" style="background-color: blue;" data-color="blue">Blue</button>
+                <button class="color-box w-32 h-12 rounded-md text-white font-bold shadow-md hover:scale-105 transition-transform" style="background-color: green;" data-color="green">Green</button>
+                <button class="color-box w-32 h-12 rounded-md text-white font-bold shadow-md hover:scale-105 transition-transform" style="background-color: orange;" data-color="orange">Orange</button>
+                <button class="color-box w-32 h-12 rounded-md text-white font-bold shadow-md hover:scale-105 transition-transform" style="background-color: purple;" data-color="purple">Purple</button>
+                <button class="color-box w-32 h-12 rounded-md text-white font-bold shadow-md hover:scale-105 transition-transform" style="background-color: yellow; color: black;" data-color="yellow">Yellow</button>
+            </div>
+            
+            <div id="selected-color-display" class="text-2xl font-bold mt-4">
+                Selected Color: <span id="color-name">None</span>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        // Get elements
+        const container = document.getElementById('container');
+        const colorButtons = document.querySelectorAll('.color-box');
+        const colorName = document.getElementById('color-name');
+        const body = document.getElementById('body');
+        
+        // Set initial state
+        let activeButton = null;
+        
+        // Add event listeners to all color buttons
+        colorButtons.forEach(button => {
+            button.addEventListener('click', function() {
+                // Get the color from the button's data attribute
+                const selectedColor = this.getAttribute('data-color');
+                
+                // Update the container and body background
+                container.style.backgroundColor = selectedColor;
+                body.style.backgroundColor = selectedColor;
+                
+                // Update the selected color text
+                colorName.textContent = selectedColor.charAt(0).toUpperCase() + selectedColor.slice(1);
+                
+                // Reset all buttons to remove active state
+                colorButtons.forEach(btn => {
+                    btn.classList.remove('ring-4', 'ring-white', 'ring-opacity-70', 'scale-110');
+                });
+                
+                // Add active state to the clicked button
+                this.classList.add('ring-4', 'ring-white', 'ring-opacity-70', 'scale-110');
+                
+                // Update active button reference
+                activeButton = this;
+            });
+        });
+    </script>
+
+</body>
+</html>

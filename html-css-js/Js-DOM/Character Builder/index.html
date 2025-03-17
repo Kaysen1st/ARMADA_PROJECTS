@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Character Builder App</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body class="bg-gray-100 min-h-screen">
+    <div class="container mx-auto p-4">
+        <h1 class="text-center text-2xl font-bold mb-6">Character Creator</h1>
+        
+        <!-- Character Preview Section -->
+        <div class="character-container mb-8">
+            <!-- Divided character sections -->
+            <div class="character-part helmet-section">
+                <img id="helmet-display" src="assets/Arctic_Hood.png" alt="Helmet" class="max-h-full">
+            </div>
+            <div class="character-part armor-section">
+                <img id="armor-display" src="assets/Arctic_Jacket.png" alt="Armor" class="max-h-full">
+            </div>
+            <div class="character-part leggings-section">
+                <img id="leggings-display" src="assets/Arctic_Leggings.png" alt="Leggings" class="max-h-full">
+            </div>
+            <div class="character-part boots-section">
+                <img id="boots-display" src="assets/Arctic_Boots.png" alt="Boots" class="max-h-full">
+            </div>
+        </div>
+        
+        <!-- Armor Selection Sections -->
+        <div class="selection-panels space-y-6 max-w-md mx-auto">
+            <!-- Helmet Selection -->
+            <div class="panel bg-white p-4 rounded-lg shadow">
+                <h3 class="text-lg font-semibold mb-3">Select Your Helmet</h3>
+                <div class="flex space-x-4 justify-center" id="helmet-options">
+                    <div class="armor-option border-2 border-gray-300 rounded p-2" data-part="helmet" data-src="assets/Arctic_Hood.png">
+                        <img src="assets/Arctic_Hood.png" alt="Blue Helmet" class="w-12 h-12 object-contain">
+                    </div>
+                    <div class="armor-option border-2 border-gray-300 rounded p-2" data-part="helmet" data-src="assets/Fiery_Helmet.png">
+                        <img src="assets/Fiery_Helmet.png" alt="Brown Helmet" class="w-12 h-12 object-contain">
+                    </div>
+                    <div class="armor-option border-2 border-gray-300 rounded p-2" data-part="helmet" data-src="assets/Iron_Helmet.png">
+                        <img src="assets/Iron_Helmet.png" alt="Blue Helmet" class="w-12 h-12 object-contain">
+                    </div>
+                    <div class="armor-option border-2 border-gray-300 rounded p-2" data-part="helmet" data-src="assets/Knightmetal_Helmet.png">
+                        <img src="assets/Knightmetal_Helmet.png" alt="Brown Helmet" class="w-12 h-12 object-contain">
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Armor Selection -->
+            <div class="panel bg-white p-4 rounded-lg shadow">
+                <h3 class="text-lg font-semibold mb-3">Select Your Armor</h3>
+                <div class="flex space-x-4 justify-center" id="armor-options">
+                    <div class="armor-option border-2 border-gray-300 rounded p-2" data-part="armor" data-src="assets/Arctic_Jacket.png">
+                        <img src="assets/Arctic_Jacket.png" alt="White Armor" class="w-12 h-12 object-contain">
+                    </div>
+                    <div class="armor-option border-2 border-gray-300 rounded p-2" data-part="armor" data-src="assets/Fiery_Chestplate.png">
+                        <img src="assets/Fiery_Chestplate.png" alt="Green Armor" class="w-12 h-12 object-contain">
+                    </div>
+                    <div class="armor-option border-2 border-gray-300 rounded p-2" data-part="armor" data-src="assets/Ironwood_Chestplate.png">
+                        <img src="assets/Ironwood_Chestplate.png" alt="White Armor" class="w-12 h-12 object-contain">
+                    </div>
+                    <div class="armor-option border-2 border-gray-300 rounded p-2" data-part="armor" data-src="assets/Knightmetal_Chestplate.png">
+                        <img src="assets/Knightmetal_Chestplate.png" alt="Green Armor" class="w-12 h-12 object-contain">
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Leggings Selection -->
+            <div class="panel bg-white p-4 rounded-lg shadow">
+                <h3 class="text-lg font-semibold mb-3">Select Your Leggings</h3>
+                <div class="flex space-x-4 justify-center" id="leggings-options">
+                    <div class="armor-option border-2 border-gray-300 rounded p-2" data-part="leggings" data-src="assets/Arctic_Leggings.png">
+                        <img src="assets/Arctic_Leggings.png" alt="White Leggings" class="w-12 h-12 object-contain">
+                    </div>
+                    <div class="armor-option border-2 border-gray-300 rounded p-2" data-part="leggings" data-src="assets/Fiery_Leggings.png">
+                        <img src="assets/Fiery_Leggings.png" alt="Brown Leggings" class="w-12 h-12 object-contain">
+                    </div>
+                    <div class="armor-option border-2 border-gray-300 rounded p-2" data-part="leggings" data-src="assets/Ironwood_Leggings.png">
+                        <img src="assets/Ironwood_Leggings.png" alt="White Leggings" class="w-12 h-12 object-contain">
+                    </div>
+                    <div class="armor-option border-2 border-gray-300 rounded p-2" data-part="leggings" data-src="assets/Knightmetal_Greaves.png">
+                        <img src="assets/Knightmetal_Greaves.png" alt="Brown Leggings" class="w-12 h-12 object-contain">
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Boots Selection -->
+            <div class="panel bg-white p-4 rounded-lg shadow">
+                <h3 class="text-lg font-semibold mb-3">Select Your Boots</h3>
+                <div class="flex space-x-4 justify-center" id="boots-options">
+                    <div class="armor-option border-2 border-gray-300 rounded p-2" data-part="boots" data-src="assets/Arctic_Boots.png">
+                        <img src="assets/Arctic_Boots.png" alt="White Boots" class="w-12 h-12 object-contain">
+                    </div>
+                    <div class="armor-option border-2 border-gray-300 rounded p-2" data-part="boots" data-src="assets/Fiery_Boots.png">
+                        <img src="assets/Fiery_Boots.png" alt="Brown Boots" class="w-12 h-12 object-contain">
+                    </div>
+                    <div class="armor-option border-2 border-gray-300 rounded p-2" data-part="boots" data-src="assets/Ironwood_Boots.png">
+                        <img src="assets/Ironwood_Boots.png" alt="White Boots" class="w-12 h-12 object-contain">
+                    </div>
+                    <div class="armor-option border-2 border-gray-300 rounded p-2" data-part="boots" data-src="assets/Knightmetal_Boots.png">
+                        <img src="assets/Knightmetal_Boots.png" alt="Brown Boots" class="w-12 h-12 object-contain">
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Save Button -->
+            <div class="text-center">
+                <button id="save-character" class="bg-blue-600 hover:bg-blue-700 text-white font-bold py-2 px-6 rounded-lg transition">
+                    Save Character
+                </button>
+            </div>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>

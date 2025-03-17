@@ -22,10 +22,10 @@ function divide(a, b) {
 }
 
 // Examples of usage:
-console.log(calculate(5, 3, add));       // Output: 8
+console.log(calculate(5, 3, add)); // Output: 8
 console.log(calculate(4, 2, multiply)); // Output: 8
 console.log(calculate(5, 3, subtract)); // Output: 2
-console.log(calculate(6, 2, divide));  // Output: 3
+console.log(calculate(6, 2, divide)); // Output: 3
 
 //task 2
 function delayedMessage(message, delay, callback, initialcallback) {
@@ -37,11 +37,16 @@ function delayedMessage(message, delay, callback, initialcallback) {
         callback(message);
     }, delay);
 }
-delayedMessage("Hello, world!", 2000, function(msg) {
-    console.log("Delayedmessage: ", msg);
-}, function(msg){
-    console.log("Initial message: ", msg);
-});
+delayedMessage(
+    "Hello, world!",
+    2000,
+    function (msg) {
+        console.log("Delayedmessage: ", msg);
+    },
+    function (msg) {
+        console.log("Initial message: ", msg);
+    }
+);
 
 //task 3
 document.getElementById("clickMe").addEventListener("click", function () {
@@ -54,16 +59,16 @@ document.getElementById("clickMe2").addEventListener("click", function () {
 //task 4
 function repeatTask(times, callback) {
     for (let i = 0; i < times; i++) {
-       if (callback(i) === false){
+        if (callback(i) === false) {
             break;
-        };
+        }
     }
 }
 
-repeatTask(5, function(index) {
+repeatTask(5, function (index) {
     console.log("Iteration:", index);
 
-    if (index === 2){
+    if (index === 2) {
         return false;
     }
 });

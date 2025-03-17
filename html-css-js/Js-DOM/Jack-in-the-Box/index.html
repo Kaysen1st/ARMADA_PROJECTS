@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Jack-in-the-Box Surprise</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        @keyframes popUp {
+            0% { transform: translateY(100%); opacity: 0; }
+            60% { transform: translateY(-20%); }
+            80% { transform: translateY(10%); }
+            100% { transform: translateY(0); opacity: 1; }
+        }
+        
+        .pop-up-animation {
+            animation: popUp 1s ease-out forwards;
+        }
+    </style>
+</head>
+<body class="flex justify-center items-center min-h-screen" style="background-color: #E6E6E6;">
+    <div class="text-center">
+        <h1 class="text-3xl font-bold mb-8 text-gray-800">Jack-in-the-Box</h1>
+        
+        <div class="relative mx-auto mb-8 w-64 h-64">
+            <!-- Closed box image (initially visible) -->
+            <img 
+                id="closedBox" 
+                class="w-full h-full object-contain absolute top-0 left-0 transition-opacity duration-300"
+                src="close-box.png"
+                alt="Closed Box"
+            />
+            
+            <!-- Open box image (initially hidden) -->
+            <img 
+                id="openBox" 
+                class="w-full h-full object-contain absolute top-0 left-0 opacity-0 transition-opacity duration-300"
+                src="open.box.png"
+                alt="Open Box"
+            />
+            
+            <!-- Surprise image (initially hidden) -->
+            <img 
+                id="surpriseImage" 
+                class="w-3/4 h-3/4 object-contain absolute top-[-50%] left-1/2 transform -translate-x-1/2 opacity-0"
+                src="kap.jpg"
+                alt="Surprise"
+            />
+        </div>
+        
+        <button 
+            id="toggleButton" 
+            class="bg-blue-500 hover:bg-blue-600 text-white font-bold py-2 px-6 rounded-full transition-colors"
+        >
+            Click Me
+        </button>
+
+        <audio id="popSound" src="https://www.soundjay.com/mechanical/sounds/spring-boing-01.mp3" preload="auto"></audio>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>

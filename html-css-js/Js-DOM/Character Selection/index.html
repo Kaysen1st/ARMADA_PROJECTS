@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Street Fighter Character Selection</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body class="bg-gray-800 min-h-screen flex items-center justify-center">
+    <div class="container mx-auto p-8 bg-gray-900 rounded-lg shadow-lg max-w-4xl text-white">
+        <h1 class="text-3xl font-bold text-center mb-8 text-red-500">SELECT YOUR FIGHTER</h1>
+        
+        <div class="flex flex-col md:flex-row gap-8">
+            <!-- Character Selection Grid -->
+            <div class="grid grid-cols-3 gap-4 border border-gray-700 p-4 rounded-lg">
+                <!-- Character 1: Ryu -->
+                <div class="character-option cursor-pointer transition-all duration-200" 
+                     data-character-id="1"
+                     data-character-name="Ryu"
+                     data-character-image="images/ryu.gif"
+                     data-character-desc="The iconic wandering warrior and master of the Hadouken.">
+                    <img src="images/ryu.png" 
+                         alt="Ryu" 
+                         class="w-20 h-20 mx-auto p-2 hover:bg-gray-700 rounded-lg object-contain">
+                </div>
+                
+                <!-- Character 2: Chun-Li -->
+                <div class="character-option cursor-pointer transition-all duration-200" 
+                     data-character-id="2"
+                     data-character-name="Chun-Li"
+                     data-character-image="images/chun-lii.gif"
+                     data-character-desc="The first lady of fighting games, known for her powerful kicks.">
+                    <img src="images/chun li.png" 
+                         alt="Chun-Li" 
+                         class="w-20 h-20 mx-auto p-2 hover:bg-gray-700 rounded-lg object-contain">
+                </div>
+                
+                <!-- Character 3: Ken Masters -->
+                <div class="character-option cursor-pointer transition-all duration-200" 
+                     data-character-id="3"
+                     data-character-name="Ken Masters"
+                     data-character-image="images/ken.png"
+                     data-character-desc="Ryu's best friend and rival, with a more aggressive fighting style.">
+                    <img src="images/kens.png" 
+                         alt="Ken Masters" 
+                         class="w-20 h-20 mx-auto p-2 hover:bg-gray-700 rounded-lg object-contain">
+                </div>
+                
+                <!-- Character 4: Guile -->
+                <div class="character-option cursor-pointer transition-all duration-200" 
+                     data-character-id="4"
+                     data-character-name="Guile"
+                     data-character-image="images/Guile.gif"
+                     data-character-desc="The military man with his signature Sonic Boom and Flash Kick.">
+                    <img src="images/Guile.png" 
+                         alt="Guile" 
+                         class="w-20 h-20 mx-auto p-2 hover:bg-gray-700 rounded-lg object-contain">
+                </div>
+                
+                <!-- Character 5: M. Bison -->
+                <div class="character-option cursor-pointer transition-all duration-200" 
+                     data-character-id="5"
+                     data-character-name="M. Bison"
+                     data-character-image="images/M. Bison.gif"
+                     data-character-desc="The evil dictator of Shadaloo and master of Psycho Power.">
+                    <img src="images/m.bison.png" 
+                         alt="M. Bison" 
+                         class="w-20 h-20 mx-auto p-2 hover:bg-gray-700 rounded-lg object-contain">
+                </div>
+                
+                <!-- Character 6: Akuma -->
+                <div class="character-option cursor-pointer transition-all duration-200" 
+                     data-character-id="6"
+                     data-character-name="Akuma"
+                     data-character-image="images/akuma.gif"
+                     data-character-desc="The dark and powerful warrior who embraces the Satsui no Hado.">
+                    <img src="images/akuma.png" 
+                         alt="Akuma" 
+                         class="w-20 h-20 mx-auto p-2 hover:bg-gray-700 rounded-lg object-contain">
+                </div>
+                
+                <!-- Character 7: Cammy White -->
+                <div class="character-option cursor-pointer transition-all duration-200" 
+                     data-character-id="7"
+                     data-character-name="Cammy White"
+                     data-character-image="images/cammy.gif"
+                     data-character-desc="A fast and agile fighter from Delta Red with deadly Spiral Arrows.">
+                    <img src="images/cammy.png" 
+                         alt="Cammy White" 
+                         class="w-20 h-20 mx-auto p-2 hover:bg-gray-700 rounded-lg object-contain">
+                </div>
+                
+                <!-- Character 8: Zangief -->
+                <div class="character-option cursor-pointer transition-all duration-200" 
+                     data-character-id="8"
+                     data-character-name="Zangief"
+                     data-character-image="images/Zangief.gif"
+                     data-character-desc="The Russian wrestler with devastating throws and the Spinning Piledriver.">
+                    <img src="images/Zangief.png" 
+                         alt="Zangief" 
+                         class="w-20 h-20 mx-auto p-2 hover:bg-gray-700 rounded-lg object-contain">
+                </div>
+                
+                <!-- Character 9: Dhalsim -->
+                <div class="character-option cursor-pointer transition-all duration-200" 
+                     data-character-id="9"
+                     data-character-name="Dhalsim"
+                     data-character-image="images/Dhalsim.gif"
+                     data-character-desc="The yoga master with stretching limbs and fire attacks.">
+                    <img src="images/Dhalsim.png" 
+                         alt="Dhalsim" 
+                         class="w-20 h-20 mx-auto p-2 hover:bg-gray-700 rounded-lg object-contain">
+                </div>
+            </div>
+            
+            <!-- Selected Character Display -->
+            <div class="flex-1 flex flex-col items-center justify-center bg-gray-800 p-4 rounded-lg">
+                <div class="text-center">
+                    <img id="selected-character-image" 
+                         src="images/ryu.gif" 
+                         alt="Ryu" 
+                         class="w-64 h-64 mx-auto mb-4 object-contain">
+                    <h2 id="selected-character-name" class="text-2xl font-bold mb-2 text-yellow-400">Ryu</h2>
+                    <p id="selected-character-desc" class="text-gray-300">The iconic wandering warrior and master of the Hadouken.</p>
+                    <div class="mt-4 bg-red-900 rounded-lg p-2 inline-block">
+                        <span class="text-sm font-bold">Special Move: Hadouken</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>

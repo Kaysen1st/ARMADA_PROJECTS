@@ -1,10 +1,10 @@
-function customFilter(arr, callback) { 
+function customFilter(arr, callback) {
     let result = [];
 
     for (let i = 0; i < arr.length; i++) {
-      if (callback(arr[i])) {
-        result.push(arr[i]);
-      }
+        if (callback(arr[i])) {
+            result.push(arr[i]);
+        }
     }
     return result;
 }
@@ -19,13 +19,13 @@ console.log(evenNumbers);  // Output: [2, 4, 6]
 //task 2
 
 function countdown(start, callback) {
-    if (start < 0){
+    if (start < 0) {
         return;
-    }else{ 
+    } else {
         callback(start);
-setTimeout(() => countdown(start - 1, callback), 1000);
+        setTimeout(() => countdown(start - 1, callback), 1000);
     }
-}   
+}
 
 
 function displayNumber(num) {
@@ -39,18 +39,17 @@ function createButton(buttonText, callback) {
     let button = document.getElementById("myButton")
     button.textContent = buttonText;
     button.addEventListener("click", callback);
-
 }
 
 function buttonClicked() {
     console.log("Button Clicked!");
 }
 
-createButton("Click Me", buttonClicked);  
+createButton("Click Me", buttonClicked);
 
 //task 4
 function runTasks(tasks) {
-    for(let i = 0; i<tasks.length; i++){
+    for (let i = 0; i < tasks.length; i++) {
         setTimeout(() => tasks[i](), i * 1000);
 
     }
@@ -69,14 +68,14 @@ function task3() {
     console.log("Task 3 completed");
 }
 
-runTasks([task1, task2, task3]); 
+runTasks([task1, task2, task3]);
 
 //task 5
 function askQuestion(question, choices, correctAnswer, callback) {
+    let userAnswer = "4";
+    let isCorrect = userAnswer === correctAnswer;
     console.log(question);
     console.log(choices);
-    let userAnswer = "4";
-    let isCorrect = userAnswer == correctAnswer; 
     console.log(userAnswer);
     callback(isCorrect);
 
